@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:hw4/homepage.dart';
 import 'package:hw4/main.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -19,7 +20,7 @@ class _SplashScreenState extends State<SplashScreen>
     Future.delayed(const Duration(seconds: 3), () {
       //takes you to home screen after 3 seconds
       Navigator.of(context)
-          .pushReplacement(MaterialPageRoute(builder: (_) => const MyApp()));
+          .pushReplacement(MaterialPageRoute(builder: (_) => const HomePage()));
     });
   }
 
