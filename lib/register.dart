@@ -61,11 +61,12 @@ class _RegisterState extends State<Register> {
 
         // Save user details in Firestore
         await _firestore.collection('Users').doc(userCredential.user!.uid).set({
-          'firstName': _firstController.text.trim(),
-          'lastName': _lastController.text.trim(),
+          'uid': userCredential.user!.uid,
+          'firstname': _firstController.text.trim(),
+          'lastname': _lastController.text.trim(),
           'email': _emailController.text.trim(),
           'role': 'user', // Default role
-          'registrationDate': FieldValue.serverTimestamp(),
+          'regdate': FieldValue.serverTimestamp(),
         });
 
         // Navigate to home screen or show success message

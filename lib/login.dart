@@ -28,7 +28,7 @@ class _LoginPageState extends State<LoginPage> {
         );
 
         // Navigate to Home Screen on success
-        Navigator.pushReplacementNamed(context, '/home');
+        Navigator.pushReplacementNamed(context, '/mboard.dart');
       } catch (e) {
         // Show error message
         ScaffoldMessenger.of(context).showSnackBar(
