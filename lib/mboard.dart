@@ -3,6 +3,8 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'boarddetails.dart';
 import 'login.dart';
+import 'profile.dart';
+import 'settings.dart';
 
 class MessageBoardsPage extends StatelessWidget {
   @override
@@ -43,10 +45,8 @@ class MessageBoardsPage extends StatelessWidget {
               title: Text('Profile'),
               onTap: () {
                 // Navigate to Profile page
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => MessageBoardsPage()));
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => ProfilePage()));
                 //Navigator.pushNamed(context, '/profile');
               },
             ),
@@ -55,10 +55,8 @@ class MessageBoardsPage extends StatelessWidget {
               title: Text('Settings'),
               onTap: () {
                 // Navigate to Settings page
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => MessageBoardsPage()));
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => SettingsPage()));
                 //Navigator.pushNamed(context, '/settings');
               },
             ),
