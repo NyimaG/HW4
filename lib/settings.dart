@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'login.dart';
+import 'mboard.dart';
 
 class SettingsPage extends StatelessWidget {
   final TextEditingController _emailController = TextEditingController();
@@ -13,6 +14,11 @@ class SettingsPage extends StatelessWidget {
     // Redirect to login page
     Navigator.push(
         context, MaterialPageRoute(builder: (context) => LoginPage()));
+  }
+
+  void backtoboardpage(BuildContext context) {
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => MessageBoardsPage()));
   }
 
   Future<void> _updateEmail(BuildContext context) async {
@@ -108,6 +114,12 @@ class SettingsPage extends StatelessWidget {
               onPressed: () => _logout(context),
               style: ElevatedButton.styleFrom(foregroundColor: Colors.red),
               child: Text('Logout'),
+            ),
+            SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () => backtoboardpage(context),
+              style: ElevatedButton.styleFrom(foregroundColor: Colors.red),
+              child: Text('Back to Message Boards'),
             ),
           ],
         ),

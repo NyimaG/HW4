@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:hw4/mboard.dart';
 
 class ProfilePage extends StatelessWidget {
   Future<Map<String, dynamic>> _getUserData() async {
@@ -48,7 +49,7 @@ class ProfilePage extends StatelessWidget {
               onPressed: () async {
                 try {
                   await FirebaseFirestore.instance
-                      .collection('users')
+                      .collection('Users')
                       .doc(user.uid)
                       .update({field: controller.text.trim()});
                   Navigator.pop(context);
@@ -113,8 +114,7 @@ class ProfilePage extends StatelessWidget {
                 trailing: IconButton(
                   icon: Icon(Icons.edit),
                   onPressed: () {
-                    _editField(
-                        context, 'firstname', userData['firstname'] ?? '');
+                    _editField(context, 'lastname', userData['lastname'] ?? '');
                   },
                 ),
               ),
@@ -125,14 +125,22 @@ class ProfilePage extends StatelessWidget {
                 trailing: IconButton(
                   icon: Icon(Icons.edit),
                   onPressed: () {
-                    _editField(
-                        context, 'firstname', userData['firstname'] ?? '');
+                    _editField(context, 'role', userData['role'] ?? '');
                   },
                 ),
               ),
             ],
           );
         },
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          // Action to perform when button is pressed
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => MessageBoardsPage()));
+          //print('Floating Action Button Pressed');
+        },
+        child: Text('Back to Message Boards'),
       ),
     );
   }
