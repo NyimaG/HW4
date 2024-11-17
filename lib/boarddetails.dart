@@ -16,55 +16,6 @@ class MessageBoardDetailsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text(boardName)),
-      drawer: Drawer(
-        child: ListView(
-          padding: EdgeInsets.zero,
-          children: [
-            DrawerHeader(
-              decoration: BoxDecoration(
-                color: Colors.blue,
-              ),
-              child: Text(
-                'Menu',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 24,
-                ),
-              ),
-            ),
-            ListTile(
-              leading: Icon(Icons.person),
-              title: Text('Profile'),
-              onTap: () {
-                Navigator.pushNamed(context, '/profile'); // Navigate to Profile
-              },
-            ),
-            ListTile(
-              leading: Icon(Icons.settings),
-              title: Text('Settings'),
-              onTap: () {
-                Navigator.pushNamed(
-                    context, '/settings'); // Navigate to Settings
-              },
-            ),
-            ListTile(
-              leading: Icon(Icons.message),
-              title: Text('Chat Boards'),
-              onTap: () {
-                Navigator.pushNamed(context, '/mboard'); // Navigate to Settings
-              },
-            ),
-            ListTile(
-              leading: Icon(Icons.logout),
-              title: Text('Logout'),
-              onTap: () async {
-                // Handle logout logic
-                Navigator.pushReplacementNamed(context, '/login');
-              },
-            ),
-          ],
-        ),
-      ),
       body: Column(
         children: [
           Expanded(

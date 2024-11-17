@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'register.dart';
+import 'mboard.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -28,7 +29,9 @@ class _LoginPageState extends State<LoginPage> {
         );
 
         // Navigate to Home Screen on success
-        Navigator.pushReplacementNamed(context, '/mboard.dart');
+        //Navigator.pushReplacementNamed(context, '/mboard.dart');
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) => MessageBoardsPage()));
       } catch (e) {
         // Show error message
         ScaffoldMessenger.of(context).showSnackBar(
