@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:hw4/homepage.dart';
+import 'package:hw4/register.dart';
 import 'package:hw4/main.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -19,8 +19,10 @@ class _SplashScreenState extends State<SplashScreen>
         SystemUiMode.immersive); //gets rid of top & bottom bars
     Future.delayed(const Duration(seconds: 3), () {
       //takes you to home screen after 3 seconds
-      Navigator.of(context)
-          .pushReplacement(MaterialPageRoute(builder: (_) => const HomePage()));
+      Navigator.of(context).pushReplacement(MaterialPageRoute(
+          builder: (_) => Register(
+                title: "login",
+              )));
     });
   }
 
