@@ -22,8 +22,8 @@ class MyApp extends StatelessWidget {
 }
 */
 class Register extends StatefulWidget {
-  Register({Key? key, required this.title}) : super(key: key);
-  final String title;
+  //Register({Key? key, required this.title}) : super(key: key);
+  //final String title;
   @override
   _RegisterState createState() => _RegisterState();
 }
